@@ -12,6 +12,8 @@ def cria_pecas():
    
    random.shuffle(lista_domino)
    return lista_domino 
+
+   # Terminal
       
 
     
