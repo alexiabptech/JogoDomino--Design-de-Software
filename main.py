@@ -15,8 +15,6 @@ def cria_pecas():
    random.shuffle(lista_domino)
    return lista_domino 
 
-   # Terminal
-
 #Depois, Verificamos o numero de jogadores, para podermos distribuirmos as peças, assim o que sobra vai pro monte.
 def inicia_jogo (n_jogadores, lista_domino):
     div_jogo = {'jogadores': {}, 'monte': [], 'mesa': [] }
