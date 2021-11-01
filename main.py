@@ -30,12 +30,12 @@ def inicia_jogo (n_jogadores, lista_domino):
 
     return div_jogo
 
-    #Essa função analisa as peças remanescentes do jogadores e devolve o vencedor, ou seja, aquele que não possuir mais peças.
-    def verifica_ganhador(num_jog):
-    #num_jogadores = {numero: lista_peças}
-    #return posicao do jogador sem peças
-        for jogador, pecas in num_jog.items():
-            if pecas == []:
-                return jogador
-        
-        return -1
+#Essa função analisa as peças remanescentes do jogadores e devolve o vencedor, ou seja, aquele que não possuir mais peças.
+def verifica_ganhador(num_jog):
+#num_jogadores = {numero: lista_peças}
+#return posicao do jogador sem peças
+    for jogador, pecas in num_jog.items():
+        if pecas == []:
+            return jogador
+    
+    return -1
