@@ -11,6 +11,7 @@ while jogar == 'sim':
     lista_pecas = domino.cria_pecas()
     divisao_pecas = domino.inicia_jogo(num_jog, lista_pecas)
     print(divisao_pecas)
+    mesa = []
     jogando = True
     while jogando:
         sorteia_jogador = random.randint(0,num_jog-1)
@@ -23,4 +24,14 @@ while jogar == 'sim':
         print('Suas peças são {}'.format(suas_pecas))
         if sorteia_jogador == 0:
             print(suas_pecas)
+            a = int(input('Escolha a posição da peça que deseja jogar: '))
+            peca_jogada = suas_pecas[a]
+            mesa.append(peca_jogada)
+            print(mesa)
+        else:
+            
+            peca_jogada = suas_pecas[divisao_pecas['jogadores'][sorteia_jogador]]
+            mesa.append(peca_jogada)    
+            print(mesa)
+            
 
