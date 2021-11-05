@@ -17,10 +17,11 @@ sorteia_jogador = random.randint(0,num_jog-1)
     #Inicia o jogo:
     #Para iniciar o jogo, temos que mostrar as peças que estão 
     # dispostas para o jogador
-pecas = qtd['jogadores'][sorteia_jogador]
+pecas = qtd['jogadores'][0]
     # mesa = 
     # posicoes = 
 
-print('Suas peças são: ', pecas)
-print('Posições possíveis',)
+print('O jogador {} inicia o jogo.'.format(sorteia_jogador))
+print('Suas peças são {}'.format(pecas))
+#print('Posições possíveis',)
 
