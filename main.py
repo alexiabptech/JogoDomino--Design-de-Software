@@ -1,5 +1,5 @@
 import domino 
-from random import randint
+import random  
 
 print('Olá, bem-vindo ao Jogo Dominó!')
 #Define-se o numero
