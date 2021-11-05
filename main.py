@@ -1,4 +1,6 @@
 import domino 
+from random import randint
+
 print('Olá, bem-vindo ao Jogo Dominó!')
 #Define-se o numero
 num_jog = int(input('Qual a quantidade de participantes?: '))
@@ -10,12 +12,12 @@ lista_pecas = domino.cria_pecas()
 qtd = domino.inicia_jogo(num_jog, lista_pecas)
 #print(qtd)
 
-#Faz um loop aq 
-if qtd 
+
+sorteia_jogador = random.randint(0,num_jog-1)
     #Inicia o jogo:
     #Para iniciar o jogo, temos que mostrar as peças que estão 
     # dispostas para o jogador
-    pecas = qtd['jogadores'][0]
+pecas = qtd['jogadores'][sorteia_jogador]
     # mesa = 
     # posicoes = 
 
