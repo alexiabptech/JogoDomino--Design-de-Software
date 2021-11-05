@@ -1,7 +1,7 @@
 import domino 
-import random  
-jogando = True
-while jogando :
+import random
+jogar = input('Você quer iniciar o jogo?(sim/não) ')
+while jogar == 'sim':
     print('Olá, bem-vindo ao Jogo Dominó!')
     #Define-se o numero
     num_jog = int(input('Qual a quantidade de participantes?: '))
@@ -18,12 +18,10 @@ while jogando :
         #Inicia o jogo:
         #Para iniciar o jogo, temos que mostrar as peças que estão 
         # dispostas para o jogador
-    pecas = divisao_pecas['jogadores'][0]
-        # mesa = 
-        # posicoes = 
+    pecas = divisao_pecas['jogadores'][0] 
 
     print('O jogador {} inicia o jogo.'.format(sorteia_jogador))
     print('Suas peças são {}'.format(pecas))
-    #print('Posições possíveis',)
-
+    if sorteia_jogador == 0:
+        print(pecas)
     
