@@ -10,15 +10,15 @@ while jogando :
     #Aqui, estamos pedindo pra que printe, de acordo com a nossa função  cria_pecas, pra que mostre a atd de peças disponiveis para a devida quantidade de jogadores
     #Aqui, cada jogador recebe 7 peças, aí as peças remanescentes vão para o monte
     lista_pecas = domino.cria_pecas()
-    qtd = domino.inicia_jogo(num_jog, lista_pecas)
-    #print(qtd)
+    divisao_pecas = domino.inicia_jogo(num_jog, lista_pecas)
+    print(divisao_pecas)
 
 
     sorteia_jogador = random.randint(0,num_jog-1)
         #Inicia o jogo:
         #Para iniciar o jogo, temos que mostrar as peças que estão 
         # dispostas para o jogador
-    pecas = qtd['jogadores'][0]
+    pecas = divisao_pecas['jogadores'][0]
         # mesa = 
         # posicoes = 
 
