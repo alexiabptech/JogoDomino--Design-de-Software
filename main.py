@@ -24,14 +24,16 @@ while jogar == 'sim':
         print('Suas peças são {}'.format(suas_pecas))
         if sorteia_jogador == 0:
             print(suas_pecas)
-            a = int(input('Escolha a posição da peça que deseja jogar: '))
-            peca_jogada = suas_pecas[a]
+            posicao_peca = int(input('Escolha a posição da peça que deseja jogar: ')) #DE 0 a 6
+            peca_jogada = suas_pecas[posicao_peca]
             mesa.append(peca_jogada)
-            print(mesa)
+        
         else:
             
-            peca_jogada = divisao_pecas['jogadores'][sorteia_jogador]
+            peca_jogada = divisao_pecas['jogadores'][sorteia_jogador] #Pega a chave do jogador que foi sorteado
             mesa.append(peca_jogada)    
-            print(mesa)
+        
+        print(mesa)
+
             
 
