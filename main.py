@@ -1,37 +1,30 @@
-import domino 
+import domino
 import random
-jogar = input('Você quer iniciar o jogo?(sim/não) ')
-while jogar == 'sim':
-    print('Olá, bem-vindo ao Jogo Dominó!')
-    #Define-se o numero
-    num_jog = int(input('Qual a quantidade de participantes?: '))
 
-    #Aqui, estamos pedindo pra que printe, de acordo com a nossa função  cria_pecas, pra que mostre a atd de peças disponiveis para a devida quantidade de jogadores
-    #Aqui, cada jogador recebe 7 peças, aí as peças remanescentes vão para o monte
-    lista_pecas = domino.cria_pecas()
-    divisao_pecas = domino.inicia_jogo(num_jog, lista_pecas)
-    print(divisao_pecas)
-    mesa = []
+iniciando = input('Olá, bem vindo ao jogo Dominó. Você deseja jogar? (sim,não) ')
+
+while iniciando == 'sim':
+    criando_as_pecas = domino.cria_pecas() #crio as peças do jogo
+    qtd_jogadores = int(input('Quantas pessoas vão jogar? ')) # Falo quantas pessoas vão jogar
+    div_jogo = domino.inicia_jogo(qtd_jogadores,criando_as_pecas) #divido as peças para os jogadores, o monte e a mesa.
+    jogadores = div_jogo['jogadores']
+    monte = div_jogo['monte']
+    mesa = div_jogo['mesa']
+    qual_inicia = random.randint(0, qtd_jogadores - 1) # quem inicia o jogo aleatoriamente
+    jogador_da_vez = qual_inicia
+    
     jogando = True
+    
     while jogando:
-        sorteia_jogador = random.randint(0,num_jog-1)
-        #Inicia o jogo:
-        #Para iniciar o jogo, temos que mostrar as peças que estão 
-        # dispostas para o jogador
-        suas_pecas = divisao_pecas['jogadores'][0] 
-
-        print('O jogador {} inicia o jogo.'.format(sorteia_jogador))
-        print('Suas peças são {}'.format(suas_pecas))
-        if sorteia_jogador == 0:
-            print(suas_pecas)
-            a = int(input('Escolha a posição da peça que deseja jogar: '))
-            peca_jogada = suas_pecas[a]
-            mesa.append(peca_jogada)
-            print(mesa)
-        else:
+        
+        if jogador_da_vez == 0: #Para voce jogar
+            print('Sua vez de jogar')
+            pecas_possiveis = domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez]) # suas peças possiveis para jogar  
+            print('As peças podem ser {}'.format(pecas_possiveis))     
             
-            peca_jogada = divisao_pecas['jogadores'][sorteia_jogador]
-            mesa.append(peca_jogada)    
-            print(mesa)
-            
-
+            if pecas_possiveis != []: # se voce tiver peças para jogar
+                print(pecas_possiveis)
+                peca_jogada = int(input('Escolha a peça a ser jogada:(0/6) '))
+                mesa = domino.adiciona_na_mesa(peca_jogada,mesa)
+                del(jogadores[jogador_da_vez](peca_jogada))
+                jogador_da_vez += 1   # para não jogar mais de uma vez
