@@ -26,14 +26,14 @@ while iniciando == 'sim':
                 print(pecas_possiveis)
                 peca_jogada = int(input('Escolha a peça a ser jogada:(0/6) '))
                 mesa = domino.adiciona_na_mesa(peca_jogada,mesa)
-                del(jogadores[jogador_da_vez](peca_jogada))
+                del(jogadores[jogador_da_vez][peca_jogada])
                 jogador_da_vez += 1   # para não jogar mais de uma vez
 
             else: # caso você não tenha peças para jogar
                
                 if monte != []: # se tiver peça no monte eu eu pego uma
                     jogadores[jogador_da_vez].append(monte[0])
-                    del(monte(0))
+                    del(monte[0])
                 else:
                     jogador_da_vez+=1
                     print('Voce pulou a vez')
