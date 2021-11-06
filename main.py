@@ -43,7 +43,7 @@ while iniciando == 'sim':
             if pecas_possiveis != []:
 
                 mesa = domino.adiciona_na_mesa(pecas_possiveis[0],mesa)
-                del(jogadores[jogador_da_vez](pecas_possiveis[0]))
+                del(jogadores[jogador_da_vez][pecas_possiveis[0]])
                 jogador_da_vez += 1
             else:
                 if monte != []:
