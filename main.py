@@ -51,5 +51,4 @@ while iniciando == 'sim':
                     del(monte[0])
                 else:
                     jogador_da_vez += 1   
-                    print('O jogador {} putlou a vez'.format(jogadores[jogador_da_vez]))
-                    
+                    print('O jogador {} pulou a vez'.format(jogadores[jogador_da_vez]))
