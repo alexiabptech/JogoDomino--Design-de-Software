@@ -30,7 +30,7 @@ while jogar == 'sim':
             print(mesa)
         else:
             
-            peca_jogada = suas_pecas[divisao_pecas['jogadores'][sorteia_jogador]]
+            peca_jogada = divisao_pecas['jogadores'][sorteia_jogador]
             mesa.append(peca_jogada)    
             print(mesa)
             
