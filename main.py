@@ -78,3 +78,15 @@ while iniciando == 'sim':
                 else:
                     jogador_da_vez += 1   
                     print('O jogador {} pulou a vez'.format(jogador_da_vez)) 
+
+        if domino.verifica_ganhador(jogadores) != -1:
+            print(f'O jogador {jogador_da_vez} venceu')
+            jogando = False
+
+        if jogador_da_vez >= qtd_jogadores:
+            jogador_da_vez = 0
+        # else:
+        # jogador_da_vez += 1
+    resposta = input("Quer continuar jogando? ")
+    if resposta != 'sim':
+        print('Adeus :)')            
