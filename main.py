@@ -13,21 +13,30 @@ while iniciando == 'sim':
     qual_inicia = random.randint(0, qtd_jogadores - 1) # quem inicia o jogo aleatoriamente
     jogador_da_vez = qual_inicia
     
+    jogando = True
+
     while jogando:
-        
+        #print(jogador_da_vez)
+        print('MESA: ', mesa)
+        print('\n')
         if jogador_da_vez == 0: #Para voce jogar
             print('Sua vez de jogar')
             pecas_possiveis = domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez]) # suas peças possiveis para jogar  
-            print('As peças podem ser {}'.format(pecas_possiveis))     
+            print('As peças que voce tem {}'.format(div_jogo['jogadores'][0]))  
+            pecas_disponiveis = [div_jogo['jogadores'][0][i] for i in pecas_possiveis]
+            print('As peças que voce pode jogar {}'.format(pecas_disponiveis))  
+            print('As posicoes das peças que voce pode jogar {}'.format(pecas_possiveis))     
             
             if pecas_possiveis != []: # se voce tiver peças para jogar
-                print(pecas_possiveis)
+                #print(pecas_possiveis)
                 peca_jogada = int(input('Escolha a peça a ser jogada:(0/6) '))
-                mesa = domino.adiciona_na_mesa(peca_jogada,mesa)
-                del(jogadores[jogador_da_vez][peca_jogada])
+                mesa = domino.adiciona_na_mesa(jogadores[jogador_da_vez][peca_jogada], mesa)
+                jogadores[jogador_da_vez].pop(peca_jogada)
+                print('Voce colocou a peça: ', peca_jogada)
+                #del(jogadores[jogador_da_vez][peca_jogada])
                 jogador_da_vez += 1   # para não jogar mais de uma vez
 
-            else: # caso você não tenha peças para jogar
+            #else: # caso você não tenha peças para jogar
                
                 if monte != []: # se tiver peça no monte eu eu pego uma
                     jogadores[jogador_da_vez].append(monte[0])
