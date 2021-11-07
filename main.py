@@ -35,14 +35,22 @@ while iniciando == 'sim':
                 print('Voce colocou a peça: ', peca_jogada)
                 #del(jogadores[jogador_da_vez][peca_jogada])
                 jogador_da_vez += 1   # para não jogar mais de uma vez
-
-            #else: # caso você não tenha peças para jogar
+            else: # caso você não tenha peças para jogar
                
                 if monte != []: # se tiver peça no monte eu eu pego uma
-                    jogadores[jogador_da_vez].append(monte[0])
-                    del(monte[0])
+                    while domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez]) == [] and monte != []:
+                        jogadores[jogador_da_vez].append(monte[0])
+                        monte.pop(0)
+                    if domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez]) != []:
+                        mesa = domino.adiciona_na_mesa(jogadores[jogador_da_vez][-1], mesa)
+                        print('Voce colocou a peça: ', peca_jogada)
+                        jogador_da_vez += 1
+                    elif monte == []:
+                        jogador_da_vez += 1
+                        print('Voce pulou a vez')
+
                 else:
-                    jogador_da_vez+=1
+                    jogador_da_vez += 1
                     print('Voce pulou a vez')
        
         else:
