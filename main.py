@@ -1,5 +1,6 @@
 import domino
 import random
+from cores import *
 
 iniciando = input('Olá, bem vindo ao jogo Dominó. Você deseja jogar? (sim,não) ')
 
@@ -24,8 +25,8 @@ while iniciando == 'sim':
             pecas_possiveis = domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez]) # suas peças possiveis para jogar  
             print('As peças que voce tem {}'.format(div_jogo['jogadores'][0]))  
             pecas_disponiveis = [div_jogo['jogadores'][0][i] for i in pecas_possiveis]
-            print('As peças que voce pode jogar {}'.format(pecas_disponiveis))  
-            print('As posicoes das peças que voce pode jogar {}'.format(pecas_possiveis))     
+            print(colorindo('As peças que voce pode jogar {}'.format(pecas_disponiveis),'ciano'))  
+            print(colorindo('As posicoes das peças que voce pode jogar {}'.format(pecas_possiveis), 'amarelo'))     
             
             if pecas_possiveis != []: # se voce tiver peças para jogar
                 #print(pecas_possiveis)
