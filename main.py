@@ -54,17 +54,27 @@ while iniciando == 'sim':
                     print('Voce pulou a vez')
        
         else:
-            pecas_possiveis = domino.posicoes_possiveis(mesa,jogadores[jogador_da_vez])
+            pecas_possiveis = domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez])
             if pecas_possiveis != []:
-
-                mesa = domino.adiciona_na_mesa(pecas_possiveis[0],mesa)
-                del(jogadores[jogador_da_vez][pecas_possiveis[0]])
+                mesa = domino.adiciona_na_mesa(jogadores[jogador_da_vez][pecas_possiveis[0]],mesa)
+                print(f'O jogador {jogador_da_vez} colocou a peça: {jogadores[jogador_da_vez][pecas_possiveis[0]]}')
+                jogadores[jogador_da_vez].pop(pecas_possiveis[0])
+                # del(jogadores[jogador_da_vez][pecas_possiveis[0]])
                 jogador_da_vez += 1
             else:
                 if monte != []:
-                    jogadores[jogador_da_vez].append(monte[0])
-                    del(monte[0])
+                    # jogadores[jogador_da_vez].append(monte[0])
+                    # del(monte[0])
+                    while domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez]) == [] and monte != []:
+                        jogadores[jogador_da_vez].append(monte[0])
+                        monte.pop(0)
+                    if domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez]) != []:
+                        mesa = domino.adiciona_na_mesa(jogadores[jogador_da_vez][-1], mesa)
+                        print(f'O jogador {jogador_da_vez} colocou a peça ', jogadores[jogador_da_vez][-1])
+                        jogador_da_vez += 1
+                    elif monte == []:
+                        jogador_da_vez += 1
+                        print('O jogador {} pulou a vez'.format(jogador_da_vez)) 
                 else:
                     jogador_da_vez += 1   
-                    print('O jogador {} pulou a vez'.format(jogadores[jogador_da_vez])) 
-                           
+                    print('O jogador {} pulou a vez'.format(jogador_da_vez)) 
