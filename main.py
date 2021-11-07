@@ -13,8 +13,6 @@ while iniciando == 'sim':
     qual_inicia = random.randint(0, qtd_jogadores - 1) # quem inicia o jogo aleatoriamente
     jogador_da_vez = qual_inicia
     
-    jogando = True
-    
     while jogando:
         
         if jogador_da_vez == 0: #Para voce jogar
