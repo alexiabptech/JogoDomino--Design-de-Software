@@ -112,4 +112,4 @@ while iniciando == 'sim':
     resposta = input("Quer continuar jogando? ")
     if resposta != 'sim':
         print('Adeus :)')
-
+        inciando = 'não'
