@@ -29,12 +29,12 @@ while iniciando == 'sim':
             print(colorindo('As posicoes das peças que voce pode jogar {}'.format(pecas_possiveis), 'amarelo'))     
             
             if pecas_possiveis != []: # se voce tiver peças para jogar
-                #print(pecas_possiveis)
+                
                 peca_jogada = int(input('Escolha a peça a ser jogada:(0/6) '))
                 mesa = domino.adiciona_na_mesa(jogadores[jogador_da_vez][peca_jogada], mesa)
                 jogadores[jogador_da_vez].pop(peca_jogada)
                 print('Voce colocou a peça: ', peca_jogada)
-                #del(jogadores[jogador_da_vez][peca_jogada])
+                
                 jogador_da_vez += 1   # para não jogar mais de uma vez
 
                 if peca_jogada not in pecas_possiveis:
@@ -43,7 +43,7 @@ while iniciando == 'sim':
                     mesa = domino.adiciona_na_mesa(jogadores[jogador_da_vez][peca_jogada], mesa)
                     jogadores[jogador_da_vez].pop(peca_jogada)
                     print('Voce colocou a peça: ', peca_jogada)
-                    #del(jogadores[jogador_da_vez][peca_jogada])
+                    
                     jogador_da_vez += 1   # para não jogar mais de uma vez
 
                 else:
@@ -51,7 +51,7 @@ while iniciando == 'sim':
                     mesa = domino.adiciona_na_mesa(jogadores[jogador_da_vez][peca_jogada], mesa)
                     jogadores[jogador_da_vez].pop(peca_jogada)
                     print('Voce colocou a peça: ', peca_jogada)
-                    #del(jogadores[jogador_da_vez][peca_jogada])
+                    
                     jogador_da_vez += 1   # para não jogar mais de uma vez
 
             else: # caso você não tenha peças para jogar
@@ -78,12 +78,11 @@ while iniciando == 'sim':
                 mesa = domino.adiciona_na_mesa(jogadores[jogador_da_vez][pecas_possiveis[0]],mesa)
                 print(f'O jogador {jogador_da_vez} colocou a peça: {jogadores[jogador_da_vez][pecas_possiveis[0]]}')
                 jogadores[jogador_da_vez].pop(pecas_possiveis[0])
-                # del(jogadores[jogador_da_vez][pecas_possiveis[0]])
+                
                 jogador_da_vez += 1
             else:
                 if monte != []:
-                    # jogadores[jogador_da_vez].append(monte[0])
-                    # del(monte[0])
+                    
                     while domino.posicoes_possiveis(mesa, jogadores[jogador_da_vez]) == [] and monte != []:
                         jogadores[jogador_da_vez].append(monte[0])
                         monte.pop(0)
@@ -104,8 +103,8 @@ while iniciando == 'sim':
 
         if jogador_da_vez >= qtd_jogadores:
             jogador_da_vez = 0
-        # else:
-        #     jogador_da_vez += 1
+        
+        
     resposta = input("Quer continuar jogando? ")
     if resposta != 'sim':
         print('Adeus :)')
